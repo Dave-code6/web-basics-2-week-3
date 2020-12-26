@@ -77,24 +77,24 @@ alert(`"Hit, You sunk one of ${player1.name}'s ships"`);
   alert("You missed");
 }
 }
-for (let i = 0; i < player1.ships; i++){
-  for (let j = 0; j < player2.ships; j++)
-  Gameplay(player1, player2);
-  Gameplay(player2, player1);
-  if (player2.ships === 0 || player1.ships === 0){
-    alert(`"${player1.name} Congratulations, You won"`);
-    break;
-  }else { if( player1.ships === 0){
-      alert(`"${player2.name} Congratulations, You won`);
-      break;
-  }
+do {Gameplay(player1, player2);
+if (player2.ships === 0) {
+  alert(`"${player1.name} Congratulations, You won"`);
+  break;
+}else { if( player1.ships === 0){
+    alert(`"${player2.name} Congratulations, You won`);
 }
-  }
-  }
+} 
+}while (player1.ships > 0 && player2.ships > 0);
+
+//for (let i = 0; i < player1.ships; i++){
+  //for (let j = 0; j < player2.ships; j++)
+  //Gameplay(player1, player2);
+}
 battleship();
 
 
-return 'The winner is...?'
+//return 'The winner is...?'
 
 
 
